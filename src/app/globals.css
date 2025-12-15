@@ -4,17 +4,20 @@
   --font-sans: var(--font-inter);
   --font-jp: var(--font-noto-sans-jp);
 
-  --color-background: #0a0a0a;
-  --color-foreground: #ededed;
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
 
-  --color-accent: #C0A062;
-  /* Gold-ish accent */
-  --color-accent-dim: #8A7240;
+  --color-accent: #0ea5e9;
+  /* Sky Blue 500 */
+  --color-accent-dim: #0284c7;
+  /* Sky Blue 600 */
+  --color-accent-light: #e0f2fe;
+  /* Sky Blue 100 */
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
 }
 
 body {
@@ -26,5 +29,5 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: #000;
+  color: #ffffff;
 }

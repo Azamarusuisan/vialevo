@@ -30,12 +30,12 @@ export default function Navbar() {
                 animate={{ y: 0 }}
                 transition={{ duration: 0.6 }}
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled || isOpen
-                        ? "bg-black/80 backdrop-blur-md border-b border-white/10 py-4"
+                        ? "bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm py-4"
                         : "bg-transparent py-6"
                     }`}
             >
                 <div className="container mx-auto px-6 flex justify-between items-center">
-                    <a href="#" className="font-jp text-xl md:text-2xl font-bold tracking-widest text-white z-50">
+                    <a href="#" className={`font-jp text-xl md:text-2xl font-bold tracking-widest z-50 transition-colors ${isScrolled || isOpen ? "text-gray-900" : "text-gray-900 md:text-white"}`}>
                         VIALEVO
                     </a>
 
@@ -45,7 +45,7 @@ export default function Navbar() {
                             <li key={link.name}>
                                 <a
                                     href={link.href}
-                                    className="text-sm font-medium tracking-wide text-gray-300 hover:text-accent transition-colors uppercase"
+                                    className={`text-sm font-medium tracking-wide hover:text-accent transition-colors uppercase ${isScrolled ? "text-gray-600" : "text-gray-600 md:text-white/90"}`}
                                 >
                                     {link.name}
                                 </a>
@@ -56,7 +56,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden text-white z-50 p-2"
+                        className={`md:hidden z-50 p-2 ${isScrolled || isOpen ? "text-gray-900" : "text-gray-900"}`}
                     >
                         {isOpen ? <X /> : <Menu />}
                     </button>
@@ -70,14 +70,14 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center space-y-8 md:hidden"
+                        className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center space-y-8 md:hidden"
                     >
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="text-2xl font-light text-white tracking-widest hover:text-accent transition-colors"
+                                className="text-2xl font-light text-gray-900 tracking-widest hover:text-accent transition-colors"
                             >
                                 {link.name}
                             </a>

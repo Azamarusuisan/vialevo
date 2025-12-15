@@ -23,11 +23,11 @@ const services = [
 
 export default function Service() {
     return (
-        <section id="service" className="py-24 bg-white text-black relative overflow-hidden">
+        <section id="service" className="py-24 bg-white text-gray-800 relative overflow-hidden">
             {/* Background Texture */}
             <div
-                className="absolute inset-0 bg-cover z-0 opacity-30"
-                style={{ backgroundImage: "url('/images/service_bg.png')" }}
+                className="absolute inset-0 bg-cover z-0 opacity-80"
+                style={{ backgroundImage: "url('/images/service_bg_light.png')" }}
             />
 
             <div className="container mx-auto px-6 relative z-10">
@@ -37,7 +37,7 @@ export default function Service() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl font-bold font-jp mb-2">Service</h2>
+                    <h2 className="text-3xl font-bold font-jp mb-2 text-gray-900">Service</h2>
                     <div className="h-1 w-12 bg-accent mx-auto" />
                 </motion.div>
 
@@ -45,16 +45,16 @@ export default function Service() {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            className="bg-gray-50 p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group"
+                            className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 group"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
                         >
-                            <div className="mb-6 p-4 bg-gray-100 rounded-full w-fit group-hover:bg-accent group-hover:text-white transition-colors duration-300 text-accent">
+                            <div className="mb-6 p-4 bg-accent-light rounded-full w-fit text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                                 {service.icon}
                             </div>
-                            <h3 className="text-xl font-bold mb-4 font-jp">{service.title}</h3>
+                            <h3 className="text-xl font-bold mb-4 font-jp text-gray-900">{service.title}</h3>
                             <p className="text-gray-600 text-sm leading-relaxed font-jp">
                                 {service.desc}
                             </p>
